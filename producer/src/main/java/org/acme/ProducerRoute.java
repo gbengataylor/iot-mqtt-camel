@@ -8,7 +8,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @ApplicationScoped
 public class ProducerRoute extends RouteBuilder {
 
-    @ConfigProperty(name = "mqtt.comsumer.on")
+    @ConfigProperty(name = "mqtt.comsumer.on", defaultValue = "false")
     private boolean mqttConsumerOn;
 
     @Override
