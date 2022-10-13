@@ -17,11 +17,11 @@ public class ProducerRoute extends RouteBuilder {
             .bean("vitalsigns" , "generate")
             .marshal().json()
           //  .log("sending ${body} to {{mqtt.producer.url}}")
-            .to("paho-mqtt5:{{mqtt.producer.topic}}?brokerURL={{mqtt.producer.url}}");
+            .to("paho-mqtt5:{{mqtt.producer.topic}}?brokerUrl={{mqtt.producer.url}}");
 
         // move consumer to another project -- comment out or set to true intentionally
         if(mqttConsumerOn) {
-            from("paho-mqtt5:{{mqtt.producer.topic}}?brokerURL={{mqtt.producer.url}}")
+            from("paho-mqtt5:{{mqtt.producer.topic}}?brokerUrl={{mqtt.producer.url}}")
                 .log("received: ${body}");
         }
     }
