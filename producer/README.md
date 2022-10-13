@@ -13,6 +13,18 @@ You can run your application in dev mode that enables live coding using:
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
 
+## Setting Environment Variables
+
+```MESSAGE_PERIOD``` - Regulates how often in milliseconds a message is produced to the topic. Default is 5000
+
+```MQTT_BROKER_URL``` - URL of MQTT broker. Default is tcp://broker-amq-mqtt:1883
+
+```MQTT_TOPIC``` - Topic to write to. Default is /telemetry/GBENGA
+
+```MQTT_CONSUMER_ON``` - Turn the internal consumer ON to view messages. The default is true in dev mode, false otherwise
+
+In OpenShift/Kubernetes, these can be set via environment variables on the ```Deployment``` or ```DeploymentConfig``` directly or mounted by configMap
+
 ## Packaging and running the application
 
 The application can be packaged using:
