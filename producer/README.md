@@ -15,15 +15,15 @@ You can run your application in dev mode that enables live coding using:
 
 ## Setting Environment Variables
 
-```MESSAGE_PERIOD``` - Regulates how often in milliseconds a message is produced to the topic. Default is 5000
+```MESSAGE_PERIOD``` - Regulates how often in milliseconds a message is produced to the topic. Default is ```5000```
 
-```MQTT_BROKER_URL``` - URL of MQTT broker. Default is tcp://broker-amq-mqtt:1883
+```MQTT_BROKER_URL``` - URL of MQTT broker. Default is ```tcp://broker-amq-mqtt:1883```
 
-```MQTT_TOPIC``` - Topic to write to. Default is /telemetry/GBENGA
+```MQTT_TOPIC``` - Topic to write to. Default is ```/telemetry/GBENGA```
 
 ```MQTT_CONSUMER_ON``` - Turn the internal consumer ON to consume and view messages. The default is true in dev mode, false otherwise
 
-The BPM range in the generated payload is 50-180. Set the following variables to modify the range
+The BPM range in the generated payload is ```50-180```. To modify the range, set the following variables
 
 ```VITAL_SIGNS_MIN_BPM``` - Set the lower bound
 
