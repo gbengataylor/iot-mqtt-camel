@@ -15,7 +15,7 @@ public class ProducerRoute extends RouteBuilder {
           //  .log("sending ${body} to {{mqtt.producer.url}}")
             .to("paho-mqtt5:{{mqtt.producer.topic}}?brokerURL={{mqtt.producer.url}}");
 
-        // move consumer to another project
+        // move consumer to another project -- comment out
         from("paho-mqtt5:{{mqtt.producer.topic}}?brokerURL={{mqtt.producer.url}}")
             .log("received: ${body}");
     }
