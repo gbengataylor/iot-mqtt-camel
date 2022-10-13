@@ -16,19 +16,25 @@ public class VitalSigns {
     protected int minBPM;
     @ConfigProperty(name = "vitalsigns.maxbpm", defaultValue = "180")
     protected int maxBPM;
-    
-    @Override
-    public String toString() {
-        return "VitalSigns [bpm=" + bpm + "]";
+
+    protected int bpm;
+    protected Random random = new Random();
+
+    public int getBpm() {
+        return bpm;
     }
 
-    public int bpm;
-    
+    public void setBpm(int bpm) {
+        this.bpm = bpm;
+    }
     public VitalSigns generate() {
-     Random random = new Random();
        VitalSigns vitalSigns = new VitalSigns();
        vitalSigns.bpm = random.nextInt(maxBPM - minBPM) + minBPM;
        return vitalSigns;
     } 
 
+    @Override
+    public String toString() {
+        return "VitalSigns [bpm=" + bpm + "]";
+    }
 }
