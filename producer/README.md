@@ -21,7 +21,7 @@ You can run your application in dev mode that enables live coding using:
 
 ```MQTT_TOPIC``` - Topic to write to. Default is ```/telemetry/GBENGA```
 
-```MQTT_CONSUMER_ON``` - Turn the internal consumer ON to consume and view messages. The default is true in dev mode, false otherwise
+```MQTT_CONSUMER_ON``` - Turn the internal consumer ON to consume and view messages. The default is ```true``` in dev mode, ```false``` otherwise
 
 The BPM range in the generated payload is ```50-180```. To modify the range, set the following variables
 
