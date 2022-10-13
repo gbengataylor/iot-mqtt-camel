@@ -3,9 +3,13 @@ package org.acme;
 import javax.enterprise.context.ApplicationScoped;
 
 import org.apache.camel.builder.RouteBuilder;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 @ApplicationScoped
 public class ProducerRoute extends RouteBuilder {
+
+    @ConfigProperty(name = "mqtt.comsumer.on")
+    private boolean mqttConsumerOn;
 
     @Override
     public void configure() throws Exception {
@@ -15,9 +19,11 @@ public class ProducerRoute extends RouteBuilder {
           //  .log("sending ${body} to {{mqtt.producer.url}}")
             .to("paho-mqtt5:{{mqtt.producer.topic}}?brokerURL={{mqtt.producer.url}}");
 
-        // move consumer to another project -- comment out
-        from("paho-mqtt5:{{mqtt.producer.topic}}?brokerURL={{mqtt.producer.url}}")
-            .log("received: ${body}");
+        // move consumer to another project -- comment out or set to true intentionally
+        if(mqttConsumerOn) {
+            from("paho-mqtt5:{{mqtt.producer.topic}}?brokerURL={{mqtt.producer.url}}")
+                .log("received: ${body}");
+        }
     }
 
 }
