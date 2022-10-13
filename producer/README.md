@@ -23,6 +23,12 @@ You can run your application in dev mode that enables live coding using:
 
 ```MQTT_CONSUMER_ON``` - Turn the internal consumer ON to consume and view messages. The default is true in dev mode, false otherwise
 
+The BPM range in the generated payload is 50-180. Set the following variables to modify the range
+
+```VITAL_SIGNS_MIN_BPM``` - Set the lower bound
+
+```VITAL_SIGNS_MAX_BPM``` - Set the upper bound
+
 In OpenShift/Kubernetes, these can be set via environment variables on the ```Deployment``` or ```DeploymentConfig``` directly or mounted by configMap
 
 ## Packaging and running the application
