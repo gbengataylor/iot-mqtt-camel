@@ -17,7 +17,7 @@ You can run your application in dev mode that enables live coding using:
 
 ```MESSAGE_PERIOD``` - Regulates how often in milliseconds a message is produced to the topic. Default is ```5000```
 
-```MQTT_BROKER_URL``` - URL of MQTT broker. Default is ```tcp://broker-amq-mqtt:1883```
+```MQTT_BROKER_URL``` - URL of MQTT broker. Default is ```tcp://broker.hivemq.com:1883```
 
 ```MQTT_TOPIC``` - Topic to write to. Default is ```/telemetry/GBENGA```
 
